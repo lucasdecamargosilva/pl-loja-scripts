@@ -5,7 +5,7 @@
 // Interruptor de manutenção (27/10/2026): com true, esconde o botão do provador em todas as lojas
 // que carregam este script — usado quando o servidor de automação (n8n) sai do ar para manutenção.
 (function () {
-    var PL_MANUTENCAO = true;
+    var PL_MANUTENCAO = false;
     if (!PL_MANUTENCAO || window.__plManutencao) return;
     window.__plManutencao = true;
     var sel = '#q-open-ia,.q-btn-trigger-ia,.q-btn-inline-provador,#q-modal-ia';
