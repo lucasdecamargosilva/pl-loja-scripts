@@ -2,6 +2,15 @@
    Arrasta a linha: esquerda = com o produto (resultado), direita = foto original do cliente.
    Funciona em qualquer widget que tenha #q-result-img-col > #q-final-view-img
    e envie a foto do cliente como 'person_image' no FormData. */
+// Interruptor de manutenção (27/10/2026): com true, esconde o botão do provador em todas as lojas
+// que carregam este script — usado quando o servidor de automação (n8n) sai do ar para manutenção.
+(function () {
+    var PL_MANUTENCAO = false;
+    if (!PL_MANUTENCAO || window.__plManutencao) return;
+    window.__plManutencao = true;
+    var sel = '#q-open-ia,.q-btn-trigger-ia,.q-btn-inline-provador,#q-modal-ia';
+    try { var st = document.createElement('style'); st.id = 'pl-manutencao-hide'; st.textContent = sel + '{display:none !important}'; (document.head || document.documentElement).appendChild(st); } catch (_) {}
+})();
 (function () {
     if (window.__plAntesDepois) return;
     window.__plAntesDepois = true;
