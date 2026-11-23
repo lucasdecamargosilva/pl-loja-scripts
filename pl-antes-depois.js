@@ -4,6 +4,8 @@
    e envie a foto do cliente como 'person_image' no FormData. */
 // Interruptor de manutenção (27/10/2026): com true, esconde o botão do provador em todas as lojas
 // que carregam este script — usado quando o servidor de automação (n8n) sai do ar para manutenção.
+// 23/11/2026: carrega o pl-comprar.js — "Comprar" do resultado = botão de comprar da página (todas as lojas que carregam este arquivo)
+;(function(){try{if(window.__plComprarLoader)return;window.__plComprarLoader=1;var s=document.createElement('script');s.src='https://lucasdecamargosilva.github.io/pl-loja-scripts/pl-comprar.js?v=1';s.async=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();
 (function () {
     var PL_MANUTENCAO = false;
     if (!PL_MANUTENCAO || window.__plManutencao) return;
