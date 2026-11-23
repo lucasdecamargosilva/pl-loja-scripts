@@ -12,7 +12,7 @@
         '#bt_comprar', '#button-buy', '.botao-comprar', '#bt-comprar', '.btn-comprar', // Tray / Bagy / Loja Integrada
         'button.single_add_to_cart_button',                                            // WooCommerce
         '.vtex-add-to-cart-button-0-x-buttonText', '.buy-button', '.buy-in-page-button', // VTEX
-        '#product-buy', '.area-compra-btn button', '.quick-buy-action',               // Fbits / Magazord / tema "ajax-product-action"
+        '#form-add-cart .product-action-buy', '#product-buy', '.area-compra-btn button', '.quick-buy-action', // Dooca (Óculos em Foco, Lebloss) / Fbits / Magazord
         '#app-lentes-open', '#product_form .nube-button', '#product_form button.buy-lente', '.mw-trigger-button', '.q-btn-lentes-produto', // apps de lentes que viram o "Comprar" da página
         '[data-action="add-to-cart"]', '.btn-add-to-cart', '.add-to-cart', '#btn-comprar',
         '[class*="btnComprar"]', '[class*="add-cart"]', '[class*="addToCart"]', '[id*="addToCart"]'
