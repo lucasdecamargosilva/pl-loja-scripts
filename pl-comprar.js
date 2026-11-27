@@ -7,19 +7,22 @@
     if (window.__plComprarNativo) return; window.__plComprarNativo = 1;
     var SEL = [
         '.product-purchase__submit',                                                   // Mozaik (tema novo)
+        // 27/11/2026: óticas com fluxo de lentes — o "Comprar" do provador abre a escolha de lentes (antes caía no "só armação")
+        '.pll-btn', '.q-btn-lentes-produto', '.plc-lens-btn', '#ec-lens-popup--openBtn', '#app-lentes-open',
+        '#product_form .nube-button', '.nube-button', '#product_form button.buy-lente', '.mw-trigger-button',
         '#product_form .js-addtocart', '.js-addtocart',                                // Nuvemshop
         'form[action*="/cart/add"] button[type=submit]', 'form[action*="/cart/add"] [name=add]', 'button[name=add]', 'product-form button[type=submit]', 'button[data-lz-atc]', // Shopify
-        '#bt_comprar', '#button-buy', '.botao-comprar', '#bt-comprar', '.btn-comprar', // Tray / Bagy / Loja Integrada
+        '#bt_comprar', '#button-buy', '.botao-comprar', '#bt-comprar', '.btn-comprar', 'a.bt-padrao[onclick*=insereNoCarrinho]', // Tray / Bagy / Loja Integrada / DV9 (Visali)
         'button.single_add_to_cart_button',                                            // WooCommerce
         '.vtex-add-to-cart-button-0-x-buttonText', '.buy-button', '.buy-in-page-button', // VTEX
-        '#form-add-cart .product-action-buy', '#product-buy', '.area-compra-btn button', '.quick-buy-action', // Dooca (Óculos em Foco, Lebloss) / Fbits / Magazord
+        '#form-add-cart .product-action-buy', '#product-buy', '.area-compra-btn button', '.area-compra-float button', '.quick-buy-action', // Dooca (Óculos em Foco, Lebloss) / Fbits / Magazord
         '#app-lentes-open', '#product_form .nube-button', '#product_form button.buy-lente', '.mw-trigger-button', '.q-btn-lentes-produto', // apps de lentes que viram o "Comprar" da página
         '[data-action="add-to-cart"]', '.btn-add-to-cart', '.add-to-cart', '#btn-comprar',
         '[class*="btnComprar"]', '[class*="add-cart"]', '[class*="addToCart"]', '[id*="addToCart"]'
     ];
     // Áreas que não são o produto principal (só olha os ANTEPASSADOS do botão, sem body/html:
     // temas Shopify põem "card-hover-effect-*" no <body>).
-    var FORA = '#q-modal-ia,[class*="card"],[class*="related"],[class*="carousel"],[class*="swiper-container-relac"],[class*="slick"],[class*="shelf"],[class*="vitrine"],header,footer,[class*="quick-buy-bar"],[class*="sticky-buy"],[class*="mini-cart"],[class*="minicart"],[class*="drawer"]';
+    var FORA = '#q-modal-ia,[class*="card"],[class*="related"],[class*="carousel"],[class*="swiper-container-relac"],[class*="slick"],[class*="shelf"],[class*="vitrine"],header,footer,[class*="quick-buy-bar"],[class*="sticky-buy"],[class*="mini-cart"],[class*="minicart"],[class*="drawer"],.js-item-product,[data-store^="product-item"]';
     function foraDoProduto(e) {
         for (var p = e.parentElement; p && p !== document.body && p !== document.documentElement; p = p.parentElement) {
             if (p.matches && p.matches(FORA)) return true;
